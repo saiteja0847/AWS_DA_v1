@@ -1,0 +1,55 @@
+AWS Devops Assistant	Building Steps:
+
+📁 PHASE 1: Setup Project
+
+- [ ] 	1.	Create project folder: devops_assistant/
+- [ ] 	2.	Create subfolders: agents/, tools/, planner/, configs/
+- [ ] 	3.	Add __init__.py to each subfolder to make them Python packages
+- [ ] 	4.	Create main.py as the entry point
+- [ ] 	5.	Create .env file to hold OpenAI and AWS keys
+- [ ] 	6.	Create requirements.txt with:
+    - [ ] boto3
+    - [ ] langchain
+    - [ ] openai
+    - [ ] python-dotenv
+
+⚙️ PHASE 2: Core Functionality
+- [ ] 7.	Install requirements:
+    - [ ] pip install -r requirements.txt
+- [ ] 8.	In main.py, add:
+    - [ ] os.getcwd() to fix import path issue
+    - [ ] Read prompt from user input
+    - [ ] Call run_devops_agent(prompt)
+- [ ] 9.	In agents/devops_agent.py:
+    - [ ] Use ChatOpenAI as LLM
+    - [ ] Register tool: create_ec2_instance
+    - [ ] Initialize LangChain agent
+    - [ ] Pass user prompt to agent
+- [ ] 10.	In tools/ec2_tools.py:
+    - [ ] Use boto3 to create EC2 instance
+    - [ ] Add basic logging and tags
+    - [ ] Handle default params (t2.micro, etc.)
+🧠 PHASE 3: Expand Capabilities
+
+- [ ] 11.	Create new tools:
+    - [ ] rds_tools.py – for RDS Postgres
+    - [ ] cloudwatch_tools.py – for logging/alarms
+    - [ ] Add each as a LangChain Tool
+- [ ] 12.	Create a simple task planner:
+    - [ ] n planner/task_planner.py, map prompts to tool actions
+    - [ ] (Optional) Evolve to LLM-based planning later
+- [ ] 13.	Secure keys:
+    - [ ] Load .env securely with python-dotenv
+    - [ ] Use boto3.Session() if needed with keys from env
+🧪 PHASE 4: Test & Iterate
+- [ ] 14.	Test with prompt:
+    - [ ] “Create a t2.micro EC2 instance named DevServer”
+- [ ] 15.	Log the response, errors, and instance IDs
+- [ ] 16.	Add error handling and retries in tool functions
+🔁 PHASE 5: Scale or Switch to CrewAI (Optional)
+- [ ] 	17.	Break agents by role:
+    - [ ] 	Infra Agent
+    - [ ] 	App Deployment Agent
+    - [ ] 	Monitor Agent
+- [ ] 	18.	Use CrewAI to assign each one a role + memory
+- [ ] 	19.	Add a Planner Agent to delegate tasks
