@@ -74,6 +74,12 @@
     "DryRun": {"required": false, "type": "boolean"},
     "EnablePrimaryIpv6": {"required": false, "type": "boolean"},
     "NetworkPerformanceOptions": {"required": false, "type": "object"},
-    "Operator": {"required": false, "type": "object"}
+    "Operator": {"required": false, "type": "object"},
+    "PlacementGroupName": {"required": false, "type": "string"},
+    "Tenancy": {"required": false, "type": "string"},
+    "AssociatePublicIpAddress": {"required": false, "type": "boolean"},
+    "Monitoring.Enabled": {"required": false, "type": "boolean"},
+    "AvailabilityZone": {"required": false, "type": "string"},
+    "SecurityGroupNames": {"required": false, "type": "list[string]"}
   }
   
