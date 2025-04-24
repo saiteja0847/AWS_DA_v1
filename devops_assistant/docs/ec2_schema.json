@@ -1,0 +1,79 @@
+{
+    "ImageId": {"required": true, "type": "string"},
+    "MinCount": {"required": true, "type": "integer"},
+    "MaxCount": {"required": true, "type": "integer"},
+    "InstanceType": {"required": false, "type": "string"},
+    "KeyName": {"required": false, "type": "string"},
+    "SecurityGroupIds": {"required": false, "type": "list[string]"},
+    "SecurityGroups": {"required": false, "type": "list[string]"},
+    "SubnetId": {"required": false, "type": "string"},
+    "UserData": {"required": false, "type": "string"},
+    "BlockDeviceMappings": {
+      "required": false,
+      "type": "list[object]",
+      "properties": {
+        "DeviceName": {"type": "string"},
+        "VirtualName": {"type": "string"},
+        "NoDevice": {"type": "string"},
+        "Ebs": {
+          "type": "object",
+          "properties": {
+            "DeleteOnTermination": {"type": "boolean"},
+            "Iops": {"type": "integer"},
+            "SnapshotId": {"type": "string"},
+            "VolumeSize": {"type": "integer"},
+            "VolumeType": {"type": "string"},
+            "KmsKeyId": {"type": "string"},
+            "Throughput": {"type": "integer"},
+            "OutpostArn": {"type": "string"},
+            "Encrypted": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "TagSpecifications": {
+      "required": false,
+      "type": "list[object]",
+      "properties": {
+        "ResourceType": {"type": "string"},
+        "Tags": {
+          "type": "list[object]",
+          "properties": {
+            "Key": {"type": "string"},
+            "Value": {"type": "string"}
+          }
+        }
+      }
+    },
+    "IamInstanceProfile": {"required": false, "type": "object", "properties": {"Name": {"type": "string"}, "Arn": {"type": "string"}}},
+    "Monitoring": {"required": false, "type": "object", "properties": {"Enabled": {"type": "boolean"}}},
+    "Placement": {"required": false, "type": "object"},
+    "CpuOptions": {"required": false, "type": "object"},
+    "CreditSpecification": {"required": false, "type": "object"},
+    "CapacityReservationSpecification": {"required": false, "type": "object"},
+    "HibernationOptions": {"required": false, "type": "object"},
+    "MetadataOptions": {"required": false, "type": "object"},
+    "EnclaveOptions": {"required": false, "type": "object"},
+    "PrivateDnsNameOptions": {"required": false, "type": "object"},
+    "MaintenanceOptions": {"required": false, "type": "object"},
+    "ElasticGpuSpecification": {"required": false, "type": "list[object]"},
+    "ElasticInferenceAccelerators": {"required": false, "type": "list[object]"},
+    "LaunchTemplate": {"required": false, "type": "object"},
+    "InstanceMarketOptions": {"required": false, "type": "object"},
+    "NetworkInterfaces": {"required": false, "type": "list[object]"},
+    "PrivateIpAddress": {"required": false, "type": "string"},
+    "DisableApiTermination": {"required": false, "type": "boolean"},
+    "InstanceInitiatedShutdownBehavior": {"required": false, "type": "string"},
+    "EbsOptimized": {"required": false, "type": "boolean"},
+    "KernelId": {"required": false, "type": "string"},
+    "RamdiskId": {"required": false, "type": "string"},
+    "Ipv6AddressCount": {"required": false, "type": "integer"},
+    "Ipv6Addresses": {"required": false, "type": "list[object]"},
+    "ClientToken": {"required": false, "type": "string"},
+    "AdditionalInfo": {"required": false, "type": "string"},
+    "DryRun": {"required": false, "type": "boolean"},
+    "EnablePrimaryIpv6": {"required": false, "type": "boolean"},
+    "NetworkPerformanceOptions": {"required": false, "type": "object"},
+    "Operator": {"required": false, "type": "object"}
+  }
+  
